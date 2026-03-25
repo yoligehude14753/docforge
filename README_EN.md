@@ -1,10 +1,10 @@
 # DocForge
 
-**Turn any requirements document into a professional formal document.**
+**Takes the grunt work out of writing bids, proposals, and solution documents.**
 
-Upload an RFP, requirements spec, or client brief — DocForge automatically parses requirements, builds an outline, generates each section with AI, and incorporates your company's reference materials (past proposals, product specs) as a knowledge base. Output is a Word file ready to edit.
+The hardest part of document writing isn't the writing itself — it's reading through requirements, untangling the structure, cross-referencing materials, and iterating on the outline. DocForge handles that part. Upload your requirements and reference documents, and it analyzes the brief, builds a structured outline, and drafts each section with AI. You focus on review and final edits.
 
-Use cases: **bid responses · solution documents · project descriptions · business proposals · service plans** — anything that takes "a pile of requirements" and turns it into "a formal document".
+Use cases: **bid responses · solution documents · project descriptions · business proposals · service plans** — any work that involves turning a pile of requirements into a formal document.
 
 [中文文档](README.md) · [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE) · [![CI](https://github.com/yoligehude14753/docforge/actions/workflows/ci.yml/badge.svg)](https://github.com/yoligehude14753/docforge/actions/workflows/ci.yml)
 

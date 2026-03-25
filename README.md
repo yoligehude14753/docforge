@@ -1,10 +1,10 @@
 # DocForge
 
-**把任何一份需求文档，变成一份专业的正式文档。**
+**让写标书、写方案、写 Proposal 不再是一件苦差事。**
 
-上传招标文件、需求说明、项目简介——DocForge 自动解析需求、生成大纲、逐章节调用 AI 写作，并将你公司的历史方案和产品资料作为参考知识库（RAG）融入每一段内容。最终导出可直接编辑的 Word 文件。
+文档撰写最耗人的不是写作本身，而是通读需求、梳理逻辑、对照资料、反复调整结构这些前置工作。DocForge 把这部分接过来——上传你的需求文件和公司参考资料，它自动解析需求、生成大纲、调用 AI 逐章节起草内容，你只需要审阅和收尾。
 
-适用场景：**标书响应 · 解决方案 · 项目说明书 · 商业 Proposal · 服务方案** 以及任何需要把"一堆要求"变成"一份正式文档"的场景。
+适用场景：**标书响应 · 解决方案 · 项目说明书 · 商业 Proposal · 服务方案** 以及任何需要把一堆要求整理成一份正式文档的工作。
 
 [English](README_EN.md) · [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE) · [![CI](https://github.com/yoligehude14753/docforge/actions/workflows/ci.yml/badge.svg)](https://github.com/yoligehude14753/docforge/actions/workflows/ci.yml)
 
