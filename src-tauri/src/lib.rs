@@ -1,6 +1,6 @@
 #[tauri::command]
 fn health_check() -> String {
-    "BidForge backend is running".to_string()
+    "DocForge backend is running".to_string()
 }
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
