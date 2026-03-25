@@ -87,7 +87,7 @@ function parseContentToParagraphs(content: string): Paragraph[] {
         result.push(
           new Paragraph({
             children: [bodyTextRun(bullet[1])],
-            numbering: { reference: 'bidforge-bullet', level: 0 },
+            numbering: { reference: 'docforge-bullet', level: 0 },
           }),
         );
       } else if (numbered) {
@@ -95,7 +95,7 @@ function parseContentToParagraphs(content: string): Paragraph[] {
         result.push(
           new Paragraph({
             children: [bodyTextRun(numbered[2])],
-            numbering: { reference: 'bidforge-numbered', level: 0 },
+            numbering: { reference: 'docforge-numbered', level: 0 },
           }),
         );
       } else {
@@ -168,7 +168,7 @@ function buildNumberingConfig() {
   return {
     config: [
       {
-        reference: 'bidforge-bullet',
+        reference: 'docforge-bullet',
         levels: [
           {
             level: 0,
@@ -184,7 +184,7 @@ function buildNumberingConfig() {
         ],
       },
       {
-        reference: 'bidforge-numbered',
+        reference: 'docforge-numbered',
         levels: [
           {
             level: 0,
