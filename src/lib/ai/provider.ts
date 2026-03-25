@@ -19,7 +19,7 @@ export interface StreamCallbacks {
 }
 
 export const DEFAULT_CONFIGS: Record<string, Partial<AIConfig>> = {
-  openai: { baseUrl: 'https://api.openai.com/v1', model: 'gpt-4.5' },
+  openai: { baseUrl: 'https://api.openai.com/v1', model: 'gpt-5.4' },
   deepseek: { baseUrl: 'https://api.deepseek.com/v1', model: 'deepseek-chat' },
   claude: { baseUrl: 'https://api.anthropic.com/v1', model: 'claude-sonnet-4-20250514' },
   ollama: { baseUrl: 'http://localhost:11434', model: 'qwen2.5:7b' },

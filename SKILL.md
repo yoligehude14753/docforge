@@ -61,7 +61,7 @@ On first launch, go to **Settings** and enter an API key:
 
 | Provider | Model |
 |----------|-------|
-| OpenAI | gpt-4.5 |
+| OpenAI | gpt-5.4 |
 | DeepSeek | deepseek-chat |
 | Claude | claude-sonnet-4 |
 | Ollama | qwen2.5:7b (no API key needed) |

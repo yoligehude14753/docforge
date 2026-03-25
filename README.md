@@ -43,7 +43,7 @@
 ### 多 AI 提供商，自由切换
 | 提供商 | 推荐模型 | 需要 API Key |
 |--------|---------|------------|
-| OpenAI | gpt-4.5 | 是 |
+| OpenAI | gpt-5.4 | 是 |
 | DeepSeek | deepseek-chat | 是 |
 | Claude | claude-sonnet-4 | 是 |
 | Ollama | qwen2.5:7b 等 | 否 |
