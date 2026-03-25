@@ -33,10 +33,10 @@ On first launch, go to **Settings** and enter an API key:
 
 | Provider | Model | Notes |
 |----------|-------|-------|
-| OpenAI | gpt-4o | Best quality |
-| DeepSeek | deepseek-chat | Cost-effective |
-| Claude | claude-sonnet-4 | Strong at long documents |
-| Ollama | qwen2.5:7b | Fully local, no API key needed |
+| OpenAI | gpt-4.1 | |
+| DeepSeek | deepseek-chat | |
+| Claude | claude-sonnet-4 | |
+| Ollama | qwen2.5:7b | No API key needed |
 
 For Ollama: install from [ollama.com](https://ollama.com), run `ollama pull qwen2.5:7b`, set base URL to `http://localhost:11434`.
 

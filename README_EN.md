@@ -42,10 +42,10 @@ Each section in the outline can be generated, rewritten, or given feedback indep
 
 | Provider | Recommended model | API key required |
 |----------|------------------|-----------------|
-| OpenAI | gpt-4o | Yes |
-| DeepSeek | deepseek-chat | Yes (cost-effective) |
+| OpenAI | gpt-4.1 | Yes |
+| DeepSeek | deepseek-chat | Yes |
 | Claude | claude-sonnet-4 | Yes |
-| Ollama | qwen2.5:7b etc. | No (fully local) |
+| Ollama | qwen2.5:7b etc. | No |
 
 ### Standard Word Export
 Output is a `.docx` file that opens directly in Word or WPS with no format loss.

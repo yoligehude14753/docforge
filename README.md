@@ -43,10 +43,10 @@
 ### 多 AI 提供商，自由切换
 | 提供商 | 推荐模型 | 需要 API Key |
 |--------|---------|------------|
-| OpenAI | gpt-4o | 是 |
-| DeepSeek | deepseek-chat | 是（性价比高） |
+| OpenAI | gpt-4.1 | 是 |
+| DeepSeek | deepseek-chat | 是 |
 | Claude | claude-sonnet-4 | 是 |
-| Ollama | qwen2.5:7b 等 | 否（完全本地） |
+| Ollama | qwen2.5:7b 等 | 否 |
 
 ### 导出标准 Word 文档
 生成结果导出为 `.docx` 格式，在 Word / WPS 中直接打开编辑，无格式损失。
