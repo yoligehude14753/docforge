@@ -1,141 +1,151 @@
 ---
 name: docforge
-description: "Generate professional bid documents, proposals, and solution documents using AI. Use when the user wants to create bid responses, solution documents, business proposals, or service plans from tender requirements and reference materials."
+description: "AI-powered professional document generator. Use when the user wants to generate formal documents — bid responses, solution documents, proposals, service plans — from requirements or tender files, or needs help setting up, using, or extending DocForge."
 ---
 
 # DocForge
 
-AI-powered bid and proposal document generator — desktop app built with Tauri 2 + React + TypeScript.
+Desktop app that turns any requirements document into a professional formal document using AI.
+
+Supports: bid responses, solution documents, project descriptions, business proposals, service plans, and any custom document structure.
 
 ## When to use this skill
 
 Use when the user:
-- Wants to generate a bid response, solution document, business proposal, or service plan
-- Has a tender document or requirements brief and needs to produce a formal response
-- Wants to set up, configure, or extend DocForge
-- Needs help adding a new AI provider, document template, or pipeline stage
-- Wants to understand the RAG knowledge pipeline or document generation flow
+- Wants to generate a formal document from a tender, RFP, requirements brief, or client description
+- Is setting up DocForge for the first time (install, API key configuration)
+- Wants to understand how the RAG knowledge pipeline works
+- Needs to add a new document template, AI provider, or pipeline stage
+- Is debugging a generation or document export issue
 
-## What this skill provides
+## User Workflow
 
-DocForge processes tender documents through a four-stage pipeline: requirements analysis → gap detection → per-section AI generation → refinement. It uses a local TF-IDF vector store to retrieve relevant passages from uploaded reference documents (RAG), then generates each section with the appropriate AI provider. Output is a structured `.docx` file.
+DocForge works in six steps. Walk the user through these:
 
-## Architecture Overview
+### 1. Download & Install
+Direct the user to [Releases](https://github.com/yoligehude14753/docforge/releases) for the platform installer:
+- macOS → `.dmg`
+- Windows → `.msi` or `.exe`
+- Linux → `.AppImage` or `.deb`
 
-```
-src/lib/
-├── ai/provider.ts          Unified interface for OpenAI / DeepSeek / Claude / Ollama
-├── pipeline/
-│   ├── analyzer.ts         Extract requirements and outline from tender text
-│   ├── gap-detector.ts     Identify missing information before generation
-│   ├── generator.ts        Per-section content generation with RAG context
-│   └── refiner.ts          Post-generation refinement pass
-├── knowledge/
-│   ├── parser/             PDF and DOCX parsing into structured trees
-│   ├── rag/                Chunker, embedder (TF-IDF), vector store, retriever
-│   └── matcher.ts          Match requirements to knowledge chunks
-├── document/builder.ts     Assemble final Word document via docx library
-└── template/registry.ts    Document type → section structure mapping
-```
+### 2. Configure AI Provider
+On first launch, go to **Settings** and enter an API key:
 
-## Instructions
+| Provider | Model | Notes |
+|----------|-------|-------|
+| OpenAI | gpt-4o | Best quality |
+| DeepSeek | deepseek-chat | Cost-effective |
+| Claude | claude-sonnet-4 | Strong at long documents |
+| Ollama | qwen2.5:7b | Fully local, no API key needed |
 
-### Step 1: Set up the development environment
+For Ollama: install from [ollama.com](https://ollama.com), run `ollama pull qwen2.5:7b`, set base URL to `http://localhost:11434`.
 
-Prerequisites: Node.js 18+, pnpm, Rust 1.77+, Tauri prerequisites.
+### 3. Create a Project
+Click **New Project**, select a document type, give it a name.
+
+Available document types:
+- 标书响应文件 (Bid Response)
+- 解决方案 (Solution Document)
+- 项目说明书 (Project Description)
+- 商业 Proposal (Business Proposal)
+- 服务方案 (Service Plan)
+- 自定义 (Custom — define your own structure)
+
+### 4. Upload Reference Materials (Knowledge Base)
+Upload past proposals, product specs, technical docs as PDF or Word files. DocForge builds a local RAG vector store from these — AI will cite relevant content when writing each section.
+
+This step is optional but strongly recommended. Without references, the AI writes from general knowledge only.
+
+### 5. Input Requirements
+Paste the tender document, requirements spec, or client brief into the requirements field. DocForge will:
+- Extract structured requirements with priority levels
+- Identify information gaps
+- Generate a section outline matching the document type
+
+The outline is editable before generation starts.
+
+### 6. Generate, Review, Export
+- Click **Generate All** to write every section, or generate sections one at a time
+- Each section streams in real-time; click **Regenerate** with feedback to rewrite
+- When satisfied, click **Export** to download a `.docx` file
+
+## Development Setup
+
+For users who want to build from source or contribute:
 
 ```bash
+# Prerequisites: Node.js 18+, pnpm, Rust 1.77+
+# See: https://tauri.app/start/prerequisites/
+
 git clone https://github.com/yoligehude14753/docforge.git
 cd docforge
 pnpm install
-pnpm tauri dev
+pnpm tauri dev       # dev mode with hot reload
+pnpm test            # run 18 test modules
+pnpm tauri build     # build release installer
 ```
 
-### Step 2: Configure an AI provider
+## Extending DocForge
 
-Open Settings in the app and enter your API key. Supported providers:
+### Add a new document template
 
-```typescript
-// src/lib/ai/provider.ts
-export const DEFAULT_CONFIGS: Record<string, Partial<AIConfig>> = {
-  openai:   { baseUrl: 'https://api.openai.com/v1',    model: 'gpt-4o' },
-  deepseek: { baseUrl: 'https://api.deepseek.com/v1',  model: 'deepseek-chat' },
-  claude:   { baseUrl: 'https://api.anthropic.com/v1', model: 'claude-sonnet-4-20250514' },
-  ollama:   { baseUrl: 'http://localhost:11434',        model: 'qwen2.5:7b' },
-};
-```
+Create a JSON file in `templates/` and register it in `src/lib/template/registry.ts`:
 
-To add a new provider, extend the `AIProvider` union type and implement the completion and streaming functions following the existing pattern.
-
-### Step 3: Add a new document template
-
-Templates define the default section structure for a document type. Add a JSON file to `templates/` and register it in `src/lib/template/registry.ts`:
-
-```typescript
-// templates/my-template.json
+```json
 {
   "docType": "My Document Type",
   "sections": [
-    { "title": "Executive Summary", "level": 1, "children": [] },
-    { "title": "Technical Approach", "level": 1, "children": [
-      { "title": "Architecture", "level": 2, "children": [] }
+    { "title": "Executive Summary", "level": 1, "description": "Overview", "children": [] },
+    { "title": "Technical Approach", "level": 1, "description": "Solution details", "children": [
+      { "title": "Architecture", "level": 2, "description": "System design", "children": [] }
     ]}
   ]
 }
 ```
 
-### Step 4: Extend the generation pipeline
+### Add a new AI provider
 
-The pipeline stages are independent functions. To add a new stage:
+In `src/lib/ai/provider.ts`:
+1. Add the provider name to the `AIConfig.provider` union type
+2. Add default config to `DEFAULT_CONFIGS`
+3. Implement `myProviderCompletion()` and `myProviderStream()` following the existing pattern
+4. Add cases in `chatCompletion()` and `streamChatCompletion()`
 
-1. Create `src/lib/pipeline/my-stage.ts` with a pure async function
-2. Call it from `src/app/routes/generate/index.tsx` at the appropriate point
-3. Add corresponding tests in `src/__tests__/my-stage.test.ts`
-
-### Step 5: Run tests
-
-```bash
-pnpm test          # run all 18 test modules once
-pnpm test:watch    # watch mode
-```
-
-Test files mirror the source structure under `src/__tests__/`.
-
-## Document Generation Workflow
-
-```
-User uploads tender doc + reference files
-        ↓
-analyzeRequirements()   → extracts requirements[], outline[]
-        ↓
-detectGaps()            → identifies missing info
-        ↓
-For each outline section:
-  retrieveContext()     → RAG search in vector store
-  generateSection()     → AI writes section with context
-        ↓
-buildDocument()         → assembles .docx with styles
-        ↓
-User downloads .docx
-```
-
-## Key API
+### Key internals
 
 ```typescript
-// Analyze a tender document
+// Analyze requirements and build outline
 import { analyzeRequirements } from '@/lib/pipeline/analyzer';
-const result = await analyzeRequirements(requirementText, documentType, aiConfig);
-// result: { requirements[], outline[], documentType, suggestedTitle }
+const result = await analyzeRequirements(text, docType, aiConfig);
+// → { requirements[], outline[], documentType, suggestedTitle }
 
-// Generate a section
+// Generate one section with RAG context
 import { generateSection } from '@/lib/pipeline/generator';
-const content = await generateSection(context, aiConfig, { onToken: (t) => console.log(t) });
+const content = await generateSection(context, aiConfig, { onToken: (t) => process.stdout.write(t) });
 
-// Search the vector store
+// Search the local vector store
 import { VectorStore } from '@/lib/knowledge/rag/vector-store';
 const store = new VectorStore();
 store.add(id, text, metadata);
-const results = store.search(query, topK = 5);
+const hits = store.search(query, topK = 5);  // TF-IDF cosine similarity
+```
+
+## Architecture
+
+```
+src/lib/
+├── ai/provider.ts        Unified multi-provider interface (OpenAI / DeepSeek / Claude / Ollama)
+├── pipeline/
+│   ├── analyzer.ts       Requirements extraction + outline generation
+│   ├── gap-detector.ts   Identify missing info before generation
+│   ├── generator.ts      Per-section generation with RAG context
+│   └── refiner.ts        Post-generation refinement
+├── knowledge/
+│   ├── parser/           PDF + DOCX → structured document trees
+│   ├── rag/              Chunker, TF-IDF embedder, vector store, retriever
+│   └── matcher.ts        Match requirements to knowledge chunks
+├── document/builder.ts   Assemble .docx output
+└── template/registry.ts  Document type → section structure map
 ```
 
 ## References
@@ -143,4 +153,5 @@ const results = store.search(query, topK = 5);
 - [README (中文)](https://github.com/yoligehude14753/docforge/blob/main/README.md)
 - [README (English)](https://github.com/yoligehude14753/docforge/blob/main/README_EN.md)
 - [Contributing Guide](https://github.com/yoligehude14753/docforge/blob/main/CONTRIBUTING.md)
-- [Tauri 2 Documentation](https://tauri.app/start/)
+- [Releases](https://github.com/yoligehude14753/docforge/releases)
+- [Tauri 2 Docs](https://tauri.app/start/)
