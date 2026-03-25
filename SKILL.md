@@ -5,9 +5,7 @@ description: "AI-powered professional document generator. Use when the user want
 
 # DocForge
 
-Desktop app that turns any requirements document into a professional formal document using AI.
-
-Supports: bid responses, solution documents, project descriptions, business proposals, service plans, and any custom document structure.
+Desktop app that helps users complete the tedious work of writing formal documents — bid responses, solution documents, proposals, service plans — using AI and a local knowledge base built from their own reference materials.
 
 ## When to use this skill
 
@@ -18,29 +16,9 @@ Use when the user:
 - Needs to add a new document template, AI provider, or pipeline stage
 - Is debugging a generation or document export issue
 
-## User Workflow
+## How to Use DocForge
 
-DocForge works in six steps. Walk the user through these:
-
-### 1. Download & Install
-Direct the user to [Releases](https://github.com/yoligehude14753/docforge/releases) for the platform installer:
-- macOS → `.dmg`
-- Windows → `.msi` or `.exe`
-- Linux → `.AppImage` or `.deb`
-
-### 2. Configure AI Provider
-On first launch, go to **Settings** and enter an API key:
-
-| Provider | Model | Notes |
-|----------|-------|-------|
-| OpenAI | gpt-4.1 | |
-| DeepSeek | deepseek-chat | |
-| Claude | claude-sonnet-4 | |
-| Ollama | qwen2.5:7b | No API key needed |
-
-For Ollama: install from [ollama.com](https://ollama.com), run `ollama pull qwen2.5:7b`, set base URL to `http://localhost:11434`.
-
-### 3. Create a Project
+### Step 1: Create a Project
 Click **New Project**, select a document type, give it a name.
 
 Available document types:
@@ -51,23 +29,46 @@ Available document types:
 - 服务方案 (Service Plan)
 - 自定义 (Custom — define your own structure)
 
-### 4. Upload Reference Materials (Knowledge Base)
-Upload past proposals, product specs, technical docs as PDF or Word files. DocForge builds a local RAG vector store from these — AI will cite relevant content when writing each section.
+### Step 2: Upload Reference Materials (Knowledge Base)
+Upload past proposals, product specs, technical docs as PDF or Word files. DocForge builds a local RAG vector store from these — AI cites relevant content when writing each section.
 
-This step is optional but strongly recommended. Without references, the AI writes from general knowledge only.
+Optional but strongly recommended. Without references, the AI writes from general knowledge only.
 
-### 5. Input Requirements
-Paste the tender document, requirements spec, or client brief into the requirements field. DocForge will:
+### Step 3: Input Requirements
+Paste the tender document, requirements spec, or client brief. DocForge will:
 - Extract structured requirements with priority levels
 - Identify information gaps
 - Generate a section outline matching the document type
 
 The outline is editable before generation starts.
 
-### 6. Generate, Review, Export
+### Step 4: Generate, Review, Export
 - Click **Generate All** to write every section, or generate sections one at a time
 - Each section streams in real-time; click **Regenerate** with feedback to rewrite
 - When satisfied, click **Export** to download a `.docx` file
+
+---
+
+## Installation
+
+Download the installer for your platform from [Releases](https://github.com/yoligehude14753/docforge/releases):
+- macOS → `.dmg`
+- Windows → `.msi` or `.exe`
+- Linux → `.AppImage` or `.deb`
+
+### Configure AI Provider
+On first launch, go to **Settings** and enter an API key:
+
+| Provider | Model |
+|----------|-------|
+| OpenAI | gpt-4.5 |
+| DeepSeek | deepseek-chat |
+| Claude | claude-sonnet-4 |
+| Ollama | qwen2.5:7b (no API key needed) |
+
+For Ollama: install from [ollama.com](https://ollama.com), run `ollama pull qwen2.5:7b`, set base URL to `http://localhost:11434`.
+
+---
 
 ## Development Setup
 

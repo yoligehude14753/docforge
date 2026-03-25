@@ -42,7 +42,7 @@ Each section in the outline can be generated, rewritten, or given feedback indep
 
 | Provider | Recommended model | API key required |
 |----------|------------------|-----------------|
-| OpenAI | gpt-4.1 | Yes |
+| OpenAI | gpt-4.5 | Yes |
 | DeepSeek | deepseek-chat | Yes |
 | Claude | claude-sonnet-4 | Yes |
 | Ollama | qwen2.5:7b etc. | No |
