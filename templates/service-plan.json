@@ -1,0 +1,52 @@
+{
+  "id": "service-plan",
+  "name": "服务方案",
+  "description": "服务方案文档，适用于服务类项目投标和方案交流",
+  "sections": [
+    {
+      "title": "服务概述",
+      "level": 1,
+      "description": "服务方案整体介绍",
+      "children": [
+        { "title": "服务背景", "level": 2, "description": "项目背景和服务需求", "children": [] },
+        { "title": "服务目标", "level": 2, "description": "服务要达成的目标", "children": [] },
+        { "title": "服务范围", "level": 2, "description": "服务覆盖的范围和边界", "children": [] }
+      ]
+    },
+    {
+      "title": "服务内容",
+      "level": 1,
+      "description": "详细服务内容说明",
+      "children": [
+        { "title": "基础服务", "level": 2, "description": "标准服务项目", "children": [] },
+        { "title": "增值服务", "level": 2, "description": "附加增值服务", "children": [] },
+        { "title": "定制服务", "level": 2, "description": "按需定制内容", "children": [] }
+      ]
+    },
+    {
+      "title": "服务保障",
+      "level": 1,
+      "description": "服务质量保障体系",
+      "children": [
+        { "title": "服务团队", "level": 2, "description": "服务团队配置和能力", "children": [] },
+        { "title": "质量体系", "level": 2, "description": "服务质量管理体系", "children": [] },
+        { "title": "SLA 承诺", "level": 2, "description": "服务等级协议和承诺", "children": [] }
+      ]
+    },
+    {
+      "title": "实施方案",
+      "level": 1,
+      "description": "服务实施计划",
+      "children": [
+        { "title": "实施流程", "level": 2, "description": "服务交付流程", "children": [] },
+        { "title": "时间安排", "level": 2, "description": "服务周期和时间表", "children": [] }
+      ]
+    },
+    {
+      "title": "服务案例",
+      "level": 1,
+      "description": "相关服务案例和客户评价",
+      "children": []
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "proposal",
+  "name": "商业 Proposal",
+  "description": "商业提案文档，适用于客户合作和业务拓展",
+  "sections": [
+    {
+      "title": "Executive Summary",
+      "level": 1,
+      "description": "提案摘要，简要说明核心价值主张",
+      "children": []
+    },
+    {
+      "title": "需求分析",
+      "level": 1,
+      "description": "对客户需求的深入分析",
+      "children": [
+        { "title": "业务挑战", "level": 2, "description": "客户面临的核心挑战", "children": [] },
+        { "title": "目标愿景", "level": 2, "description": "期望达成的业务目标", "children": [] }
+      ]
+    },
+    {
+      "title": "方案建议",
+      "level": 1,
+      "description": "针对性的解决建议",
+      "children": [
+        { "title": "方案概述", "level": 2, "description": "方案核心内容", "children": [] },
+        { "title": "方案特色", "level": 2, "description": "差异化优势", "children": [] },
+        { "title": "成功案例", "level": 2, "description": "相似项目的成功经验", "children": [] }
+      ]
+    },
+    {
+      "title": "投资回报",
+      "level": 1,
+      "description": "项目预算和回报分析",
+      "children": [
+        { "title": "预算概览", "level": 2, "description": "项目费用明细", "children": [] },
+        { "title": "ROI 分析", "level": 2, "description": "投资回报预期", "children": [] }
+      ]
+    },
+    {
+      "title": "合作方案",
+      "level": 1,
+      "description": "合作模式和下一步行动",
+      "children": [
+        { "title": "合作模式", "level": 2, "description": "推荐的合作方式", "children": [] },
+        { "title": "行动计划", "level": 2, "description": "近期推进步骤", "children": [] }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "id": "solution",
+  "name": "解决方案",
+  "description": "技术解决方案文档，适用于项目提案和技术交流",
+  "sections": [
+    {
+      "title": "项目背景",
+      "level": 1,
+      "description": "项目背景和现状分析",
+      "children": [
+        { "title": "行业背景", "level": 2, "description": "行业发展现状和趋势", "children": [] },
+        { "title": "现状分析", "level": 2, "description": "客户当前面临的问题和痛点", "children": [] },
+        { "title": "建设目标", "level": 2, "description": "项目要达成的目标", "children": [] }
+      ]
+    },
+    {
+      "title": "解决方案概述",
+      "level": 1,
+      "description": "方案整体介绍",
+      "children": [
+        { "title": "方案理念", "level": 2, "description": "设计理念和原则", "children": [] },
+        { "title": "总体架构", "level": 2, "description": "系统架构设计", "children": [] },
+        { "title": "技术路线", "level": 2, "description": "核心技术选型和路线", "children": [] }
+      ]
+    },
+    {
+      "title": "功能详细设计",
+      "level": 1,
+      "description": "各功能模块详细说明",
+      "children": [
+        { "title": "核心功能", "level": 2, "description": "核心业务功能设计", "children": [] },
+        { "title": "扩展功能", "level": 2, "description": "增值和扩展功能", "children": [] },
+        { "title": "集成接口", "level": 2, "description": "系统集成和接口设计", "children": [] }
+      ]
+    },
+    {
+      "title": "实施规划",
+      "level": 1,
+      "description": "项目实施方案",
+      "children": [
+        { "title": "实施步骤", "level": 2, "description": "分阶段实施计划", "children": [] },
+        { "title": "资源配置", "level": 2, "description": "所需资源和团队", "children": [] },
+        { "title": "风险管控", "level": 2, "description": "风险识别和应对策略", "children": [] }
+      ]
+    },
+    {
+      "title": "项目价值",
+      "level": 1,
+      "description": "方案为客户带来的价值",
+      "children": []
+    }
+  ]
+}

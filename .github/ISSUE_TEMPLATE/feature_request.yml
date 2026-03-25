@@ -1,0 +1,47 @@
+name: Feature Request
+description: Suggest a new feature or improvement
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting an improvement! Please describe what you'd like to see.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Describe the problem or limitation you're running into.
+      placeholder: When generating a bid response, I can't...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: What would you like to happen? How do you envision it working?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Any other approaches you've considered?
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Feature area
+      options:
+        - AI provider support
+        - Document generation pipeline
+        - Knowledge / RAG
+        - Document types / templates
+        - Word export
+        - UI / UX
+        - Performance
+        - Other
+    validations:
+      required: true

@@ -1,0 +1,49 @@
+{
+  "id": "project-description",
+  "name": "项目说明书",
+  "description": "项目说明文档，用于内部审批和对外介绍",
+  "sections": [
+    {
+      "title": "项目概述",
+      "level": 1,
+      "description": "项目整体情况介绍",
+      "children": [
+        { "title": "项目背景", "level": 2, "description": "项目发起的背景和原因", "children": [] },
+        { "title": "项目目标", "level": 2, "description": "预期达成的主要目标", "children": [] },
+        { "title": "项目范围", "level": 2, "description": "项目覆盖的业务和技术范围", "children": [] }
+      ]
+    },
+    {
+      "title": "技术方案",
+      "level": 1,
+      "description": "技术实现方案",
+      "children": [
+        { "title": "架构设计", "level": 2, "description": "系统架构", "children": [] },
+        { "title": "功能规格", "level": 2, "description": "功能需求和规格", "children": [] },
+        { "title": "技术选型", "level": 2, "description": "技术栈选择和理由", "children": [] }
+      ]
+    },
+    {
+      "title": "项目计划",
+      "level": 1,
+      "description": "实施计划和里程碑",
+      "children": [
+        { "title": "阶段规划", "level": 2, "description": "分阶段实施安排", "children": [] },
+        { "title": "人员组织", "level": 2, "description": "团队组织和职责", "children": [] },
+        { "title": "里程碑", "level": 2, "description": "关键里程碑节点", "children": [] }
+      ]
+    },
+    {
+      "title": "预算与资源",
+      "level": 1,
+      "description": "项目预算和资源需求",
+      "children": []
+    },
+    {
+      "title": "风险评估",
+      "level": 1,
+      "description": "风险识别与应对",
+      "children": []
+    }
+  ]
+}

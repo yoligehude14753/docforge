@@ -1,0 +1,54 @@
+{
+  "id": "bid-response",
+  "name": "投标响应文件",
+  "description": "标准投标技术标响应文件，适用于政府采购和企业招标",
+  "sections": [
+    {
+      "title": "投标函",
+      "level": 1,
+      "description": "正式投标函件，表明投标意愿和承诺",
+      "children": []
+    },
+    {
+      "title": "公司概况",
+      "level": 1,
+      "description": "投标单位基本情况介绍",
+      "children": [
+        { "title": "公司简介", "level": 2, "description": "公司基本信息、成立时间、注册资本等", "children": [] },
+        { "title": "组织架构", "level": 2, "description": "公司组织结构和管理体系", "children": [] },
+        { "title": "资质荣誉", "level": 2, "description": "相关资质证书和荣誉奖项", "children": [] }
+      ]
+    },
+    {
+      "title": "技术方案",
+      "level": 1,
+      "description": "针对招标需求的技术解决方案",
+      "children": [
+        { "title": "需求理解", "level": 2, "description": "对招标需求的理解和分析", "children": [] },
+        { "title": "总体设计", "level": 2, "description": "系统/方案总体架构设计", "children": [] },
+        { "title": "详细设计", "level": 2, "description": "各功能模块详细设计方案", "children": [] },
+        { "title": "技术优势", "level": 2, "description": "本方案的技术亮点和优势", "children": [] }
+      ]
+    },
+    {
+      "title": "项目实施方案",
+      "level": 1,
+      "description": "项目实施计划和保障",
+      "children": [
+        { "title": "实施计划", "level": 2, "description": "项目里程碑和时间安排", "children": [] },
+        { "title": "项目团队", "level": 2, "description": "项目人员配置和职责分工", "children": [] },
+        { "title": "质量保证", "level": 2, "description": "质量管理和保证措施", "children": [] }
+      ]
+    },
+    {
+      "title": "售后服务方案",
+      "level": 1,
+      "description": "售后服务承诺和保障体系",
+      "children": [
+        { "title": "服务体系", "level": 2, "description": "售后服务组织和流程", "children": [] },
+        { "title": "培训方案", "level": 2, "description": "用户培训计划", "children": [] },
+        { "title": "应急预案", "level": 2, "description": "故障处理和应急保障", "children": [] }
+      ]
+    }
+  ]
+}
